@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="rally — terms of use. the rules of the court."/>
+<meta name="theme-color" content="#f5f1e8"/>
+<meta property="og:title" content="rally — terms of use."/>
+<meta property="og:description" content="the rules of the court. read 'em before you serve."/>
+<meta property="og:type" content="website"/>
+<title>rally — terms of use.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#f5f1e8; --bg-alt:#ecead9; --card:#fff;
+    --ink:#1a1f14; --ink2:#4a5340; --muted:#8a8f7a; --line:#dcd9c8;
+    --court:#e4ff4a; --court-ink:#1a1f14;
+    --green:#2d5a3d; --green-ink:#e4ff4a;
+    --pop:#ff5a8c;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--ink);overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:1px;text-transform:uppercase;}
+
+  /* ───── nav ───── */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,241,232,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav-in{max-width:1320px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;gap:28px;}
+  .logo{font-size:24px;font-weight:700;letter-spacing:-1.2px;}
+  .logo .dot{color:var(--pop);}
+  .nav-links{display:flex;gap:24px;margin-left:40px;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--ink2);}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{margin-left:auto;display:flex;gap:10px;align-items:center;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:transform .15s;white-space:nowrap;font-family:inherit;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--ink);}
+  .btn-ink{background:var(--ink);color:var(--bg);}
+  .btn-court{background:var(--court);color:var(--court-ink);}
+  .btn-lg{padding:16px 26px;font-size:16px;}
+
+  /* ───── header ───── */
+  .legal-hero{max-width:1320px;margin:0 auto;padding:80px 40px 40px;}
+  .tag{display:inline-flex;align-items:center;gap:8px;background:var(--court);color:var(--court-ink);padding:6px 12px;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+  .tag .dot{width:6px;height:6px;border-radius:50%;background:var(--pop);}
+  .legal-hero h1{font-size:120px;font-weight:700;letter-spacing:-6px;line-height:0.9;margin:22px 0 0;}
+  .legal-hero h1 .acc{background:var(--court);color:var(--court-ink);padding:0 16px;border-radius:18px;display:inline-block;}
+  .legal-hero h1 .dot{color:var(--pop);}
+  .legal-hero .updated{margin-top:32px;padding-top:24px;border-top:1px dashed var(--line);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+  .legal-hero .updated b{color:var(--ink);}
+  .legal-hero .lede{font-size:20px;color:var(--ink2);max-width:640px;margin:24px 0 0;line-height:1.45;}
+
+  /* ───── content ───── */
+  .legal{padding:60px 40px 120px;}
+  .legal-wrap{max-width:780px;margin:0 auto;}
+  .toc{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 32px;margin-bottom:48px;}
+  .toc h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:0 0 14px;}
+  .toc ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;counter-reset:toc;}
+  .toc li{counter-increment:toc;font-size:14px;}
+  .toc li::before{content:counter(toc,decimal-leading-zero) " ";font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-right:8px;}
+  .toc a{color:var(--ink2);font-weight:500;}
+  .toc a:hover{color:var(--ink);}
+
+  .legal article{counter-reset:sec;}
+  .legal h2{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:56px 0 8px;font-weight:700;}
+  .legal h2 .n{color:var(--court-ink);background:var(--court);padding:2px 8px;border-radius:3px;margin-right:10px;}
+  .legal h3{font-size:36px;font-weight:700;letter-spacing:-1.5px;line-height:1.1;margin:0 0 18px;}
+  .legal h4{font-size:18px;font-weight:700;letter-spacing:-0.4px;line-height:1.3;margin:28px 0 10px;color:var(--ink);}
+  .legal p{font-size:16px;line-height:1.6;color:var(--ink2);margin:0 0 14px;}
+  .legal ol{padding-left:20px;margin:0 0 14px;}
+  .legal ol li{font-size:16px;line-height:1.6;color:var(--ink2);margin-bottom:6px;}
+  .legal blockquote{border-left:3px solid var(--court);background:var(--bg-alt);padding:18px 22px;margin:18px 0;border-radius:0 12px 12px 0;font-size:15px;color:var(--ink2);line-height:1.55;}
+  .legal blockquote b{color:var(--ink);}
+  .legal table.data-table{width:100%;border-collapse:collapse;margin:16px 0 24px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+  .legal table.data-table th,.legal table.data-table td{text-align:left;padding:14px 18px;font-size:14px;border-bottom:1px solid var(--line);}
+  .legal table.data-table th{background:var(--bg-alt);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700;}
+  .legal table.data-table tr:last-child td{border-bottom:none;}
+  .legal table.data-table td{color:var(--ink2);line-height:1.5;}
+  .warning{background:var(--pop);color:#fff;border-radius:20px;padding:24px 28px;margin:24px 0;}
+  .warning .lab{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;opacity:0.85;margin-bottom:8px;}
+  .warning p{color:#fff;margin:0 0 8px;font-weight:500;}
+  .warning p:last-child{margin-bottom:0;}
+  .legal p b{color:var(--ink);font-weight:600;}
+  .legal ul{padding-left:20px;margin:0 0 14px;}
+  .legal li{font-size:16px;line-height:1.6;color:var(--ink2);margin-bottom:6px;}
+  .legal a.inline{color:var(--ink);font-weight:600;border-bottom:1px solid var(--court);}
+  .legal a.inline:hover{background:var(--court);}
+  .legal hr{border:none;border-top:1px dashed var(--line);margin:48px 0;}
+
+  .callout{background:var(--ink);color:var(--bg);border-radius:20px;padding:24px 28px;margin:24px 0;}
+  .callout .lab{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--court);margin-bottom:8px;}
+  .callout p{color:#b4b8a8;margin:0;}
+
+  /* ───── footer ───── */
+  footer{background:var(--ink);color:var(--bg);padding:80px 40px 40px;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1320px;margin:0 auto;}
+  .foot-brand .logo{font-size:42px;letter-spacing:-2px;color:var(--bg);}
+  .foot-brand .logo .dot{color:var(--pop);}
+  .foot-brand p{color:#8a8f7a;font-size:14px;max-width:280px;margin-top:12px;line-height:1.5;}
+  .foot-col h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--court);text-transform:uppercase;margin:0 0 16px;}
+  .foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .foot-col a{font-size:14px;color:#b4b8a8;}
+  .foot-col a:hover{color:var(--bg);}
+  .foot-bot{max-width:1320px;margin:64px auto 0;padding-top:24px;border-top:1px solid #2a2e20;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6a6d5e;letter-spacing:1px;text-transform:uppercase;}
+
+  @media (max-width: 960px){
+    .legal-hero{padding:40px 24px;}
+    .legal-hero h1{font-size:64px;letter-spacing:-3px;}
+    .legal{padding:32px 24px 72px;}
+    .legal h3{font-size:26px;letter-spacing:-1px;}
+    .toc ol{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .nav-in{padding:16px 24px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="rally home">rally<span class="dot">.</span></a>
+    <nav class="nav-links" aria-label="main">
+      <a href="index.html#how">how it works</a>
+      <a href="index.html#features">features</a>
+      <a href="index.html#clubs">clubs</a>
+      <a href="index.html#feed">the feed</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="index.html">← back home</a>
+      <a class="btn btn-ink" href="index.html#get">get rally ↗</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="legal-hero">
+  <span class="tag"><span class="dot"></span>the fine print · v2.0 (u.s.)</span>
+  <h1>terms<br/><span class="acc">of use<span class="dot">.</span></span></h1>
+  <p class="lede">these terms are a binding agreement between you and rally. they include a mandatory binding arbitration agreement and class-action waiver in section 18 — with a 30-day right to opt out.</p>
+  <div class="updated">last updated · <b>may 4, 2026</b> · effective <b>may 4, 2026</b> · version <b>2.0 (u.s.)</b></div>
+</section>
+
+<section class="legal">
+  <div class="legal-wrap">
+
+    <nav class="toc" aria-label="sections">
+      <h5>on this page</h5>
+      <ol>
+        <li><a href="#eligibility">eligibility</a></li>
+        <li><a href="#us-only">united states only</a></li>
+        <li><a href="#account">account</a></li>
+        <li><a href="#license">license</a></li>
+        <li><a href="#do">what you can do</a></li>
+        <li><a href="#use">acceptable use</a></li>
+        <li><a href="#content">user content</a></li>
+        <li><a href="#match">match logging &amp; disputes</a></li>
+        <li><a href="#clubs">clubs</a></li>
+        <li><a href="#paid">rally+ and purchases</a></li>
+        <li><a href="#third">third-party services</a></li>
+        <li><a href="#privacy">privacy</a></li>
+        <li><a href="#ip">intellectual property; feedback</a></li>
+        <li><a href="#dmca">dmca notice and takedown</a></li>
+        <li><a href="#apple">app store terms (apple)</a></li>
+        <li><a href="#disclaim">disclaimers</a></li>
+        <li><a href="#liability">limitation of liability</a></li>
+        <li><a href="#arbitration">mandatory arbitration</a></li>
+        <li><a href="#law">governing law and forum</a></li>
+        <li><a href="#term">termination</a></li>
+        <li><a href="#mods">modifications to these terms</a></li>
+        <li><a href="#indemn">indemnification</a></li>
+        <li><a href="#oss">open source</a></li>
+        <li><a href="#export">export controls and sanctions</a></li>
+        <li><a href="#beta">beta features</a></li>
+        <li><a href="#general">general</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ol>
+    </nav>
+
+    <article>
+
+      <div class="warning" role="alert">
+        <div class="lab">⚠ please read carefully</div>
+        <p>These Terms of Use ("Terms") contain important provisions, including a <b>mandatory binding arbitration agreement and class-action waiver</b> in Section 18 that affect your legal rights.</p>
+        <p>Section 18 includes a <b>30-day right to opt out</b> of arbitration. By creating an account or using the Service, you agree to these Terms.</p>
+      </div>
+
+      <p>These Terms are a binding agreement between you and <b>RAEMAR, LLC</b>, a <b>California limited liability company</b> with a registered address at <b>4th Ave, Venice, CA 90291</b> ("Rally," "we," "our," or "us"), governing your access to and use of the Rally mobile application and related services (collectively, the "Service").</p>
+      <p><b>The Service is offered only to U.S. residents physically located in the United States. By using the Service you represent that you meet that requirement. See Section 2.</b></p>
+
+      <h2 id="eligibility"><span class="n">01</span>eligibility</h2>
+      <h3>who can use rally.</h3>
+      <p>1.1 You must be at least <b>13 years old</b> to use the Service.</p>
+      <p>1.2 If you are under the age of majority in your state (typically 18), you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.</p>
+      <p>1.3 You must not be: (a) located in or a national/resident of a country subject to U.S. Government embargo or designated as a "terrorist supporting" country; or (b) listed on any U.S. Government list of prohibited or restricted parties (including the OFAC SDN List).</p>
+
+      <h2 id="us-only"><span class="n">02</span>united states only</h2>
+      <h3>u.s. residents physically located in the u.s.</h3>
+      <p>2.1 The Service is offered only to <b>U.S. residents physically located in the United States</b> (including the District of Columbia and U.S. territories where Apple App Store and Google Play distribute the App).</p>
+      <p>2.2 By creating an account, you represent and warrant that you are a U.S. resident and are physically located in the United States. You will promptly stop using the Service and delete your account if you no longer meet this requirement.</p>
+      <p>2.3 We use IP-based geographic checks and a residency attestation at signup to enforce this restriction. We make no representation that the Service is appropriate or lawful for use outside the United States. Use of the Service from outside the United States is unauthorized and is a material breach of these Terms.</p>
+      <p>2.4 If you circumvent geographic restrictions (including by use of a VPN, proxy, or false residency representation), you accept all risk of doing so, including the risk that the Service does not comply with the laws of your jurisdiction. We disclaim all liability arising from such unauthorized use.</p>
+
+      <h2 id="account"><span class="n">03</span>account</h2>
+      <h3>one player, one profile.</h3>
+      <p>3.1 <b>Sign-in.</b> You authenticate via Sign in with Apple or Sign in with Google. You are responsible for safeguarding your authentication credentials and for activity under your account.</p>
+      <p>3.2 <b>One account per person.</b> You may maintain only one account. Creating multiple accounts to manipulate leaderboards, evade restrictions, harass others, or misrepresent identity is prohibited.</p>
+      <p>3.3 <b>Identity.</b> Your handle and display name must not impersonate another person, infringe another's rights, contain unlawful or threatening content, or violate Section 6.</p>
+      <p>3.4 <b>Notifications.</b> We may send you transactional notifications (match results, friend requests, account-related notices) by push notification or email. Marketing notifications, if any, require separate consent and can be disabled independently.</p>
+
+      <h2 id="license"><span class="n">04</span>license</h2>
+      <h3>limited, personal, revocable.</h3>
+      <p>4.1 Subject to these Terms, Rally grants you a limited, personal, non-exclusive, non-transferable, non-sublicensable, revocable license to install and use the Service on a device that you own or control, solely for your personal, non-commercial use within the United States.</p>
+      <p>4.2 The Service is licensed, not sold. We retain all right, title, and interest in and to the Service.</p>
+
+      <h2 id="do"><span class="n">05</span>what you can do</h2>
+      <h3>the service allows you to:</h3>
+      <ul>
+        <li>Create and join clubs.</li>
+        <li>Log match results (set scores) for tennis, pickleball, ping pong, and any additional sports we add.</li>
+        <li>View leaderboards, head-to-head records, and match history within clubs you belong to.</li>
+        <li>Send and receive challenges, friend requests, and notifications.</li>
+        <li>Purchase Rally+ for additional features (Section 10).</li>
+      </ul>
+
+      <h2 id="use"><span class="n">06</span>acceptable use</h2>
+      <h3>play hard. don't be a jerk.</h3>
+      <p>You agree not to:</p>
+      <p>6.1 Log fraudulent, fabricated, or knowingly inaccurate match results.</p>
+      <p>6.2 Manipulate leaderboards, statistics, or achievements through fake accounts, coordinated score inflation, collusion, or any other means.</p>
+      <p>6.3 Harass, bully, threaten, defame, or harm other users — through match notes, display names, club names, challenges, or any other feature.</p>
+      <p>6.4 Post, transmit, or store content that is unlawful, infringing, defamatory, obscene, sexually explicit, hateful, or that promotes violence or self-harm.</p>
+      <p>6.5 Reverse-engineer, decompile, disassemble, or attempt to extract source code from the Service, except to the extent such restriction is prohibited by applicable law.</p>
+      <p>6.6 Use bots, scrapers, automated tools, or scripts to access or interact with the Service.</p>
+      <p>6.7 Interfere with or disrupt the Service, its servers, or its infrastructure; bypass security; or probe vulnerabilities other than through coordinated disclosure to <a class="inline" href="contact.html">our contact form</a>.</p>
+      <p>6.8 Use the Service to violate any law, regulation, or third-party right.</p>
+      <p>6.9 Use the Service to develop a competing product or to train any artificial intelligence/machine-learning model.</p>
+      <p>We reserve the right (but have no obligation) to investigate, remove content, suspend or terminate accounts, and take legal action for violations.</p>
+
+      <h2 id="content"><span class="n">07</span>user content</h2>
+      <h3>you own your content. we host it.</h3>
+      <p>7.1 <b>Your content.</b> You retain ownership of text content you create or post in the Service, including <b>match notes, display names, handles, club names, and club descriptions</b> (collectively, "<b>User Content</b>"). The Service does not accept user-uploaded files, photos, images, audio, video, or attachments.</p>
+      <p>7.2 <b>Profile photos.</b> Your profile photo, if any, is sourced from your Apple or Google account at sign-in. You do not upload profile photos to Rally. The image is displayed in the Service as part of your account, and you are responsible for ensuring you have the right to display it. You can change or remove your profile photo through your Apple or Google account settings.</p>
+      <p>7.3 <b>License to Rally.</b> You grant Rally a non-exclusive, royalty-free, sublicensable, transferable license to host, store, reproduce, modify (for technical purposes such as formatting and truncation), display, and distribute User Content <b>solely for the purpose of operating, providing, and improving the Service</b>, including displaying it to other users in accordance with the Service's visibility settings. This license terminates when you delete the User Content or your account, except (a) as needed to comply with law, (b) for content shared with other users that they have already received or saved, and (c) for residual copies in routine backups overwritten on a rolling basis.</p>
+      <p>7.4 <b>Your representations.</b> You represent and warrant that you own or have the necessary rights to your User Content (and to any profile photo associated with your account) and that it does not violate Section 6 or any law or third-party right.</p>
+      <p>7.5 <b>Removal.</b> We may remove or refuse to display User Content at our discretion, including for violations of these Terms or in response to legal requests.</p>
+
+      <h2 id="match"><span class="n">08</span>match logging and disputes</h2>
+      <h3>scores are user-reported.</h3>
+      <p>8.1 <b>No verification.</b> Match results are logged by users and are not independently verified by Rally. We make no warranty as to the accuracy of any match data.</p>
+      <p>8.2 <b>Match confirmation.</b> Match confirmation is offered as an optional, best-effort feature. Confirmation is not a guarantee of accuracy.</p>
+      <p>8.3 <b>Disputes between users.</b> We are not obligated to investigate, mediate, or arbitrate disputes between users regarding match results, conduct, or any other matter. We <b>reserve the right</b> to remove disputed content, suspend accounts, or take other action at our discretion.</p>
+      <p>8.4 <b>Removal of fraudulent data.</b> We reserve the right to remove or correct match data that we determine, in our reasonable discretion, to be fraudulent, fabricated, or in violation of these Terms.</p>
+
+      <h2 id="clubs"><span class="n">09</span>clubs</h2>
+      <h3>owners run their clubs.</h3>
+      <p>9.1 Club creators ("owners") may invite members via invite code and configure club settings.</p>
+      <p>9.2 Rally does not pre-screen or moderate clubs. Owners are responsible for the conduct of their members and for ensuring their clubs comply with these Terms.</p>
+      <p>9.3 We may remove clubs that violate these Terms or applicable law.</p>
+
+      <h2 id="paid"><span class="n">10</span>rally+ and purchases</h2>
+      <h3>one-time purchase. no subscriptions.</h3>
+      <p>10.1 <b>One-time purchase.</b> Rally+ is a one-time, non-recurring in-app purchase that unlocks additional features, processed by the Apple App Store or Google Play Store. Refunds are subject to the applicable store's policies.</p>
+      <p>10.2 <b>No payment data.</b> Rally does not process or store payment card information. Apple and Google handle billing.</p>
+      <p>10.3 <b>Feature changes.</b> Rally may add features to Rally+, move features from Rally+ to the free tier, or modify the Service. We will not <b>materially reduce or remove features advertised at the time you purchased Rally+</b> without (a) at least 60 days' advance notice, and (b) offering you a full or pro-rata refund of the Rally+ purchase price as your sole and exclusive remedy. Bug fixes, technical changes, and removal of features that have been free-tier for at least 12 months are not material reductions.</p>
+      <p>10.4 <b>Statutory consumer rights.</b> Nothing in this Section limits any non-waivable statutory rights you have under U.S. federal or state consumer-protection laws.</p>
+
+      <h2 id="third"><span class="n">11</span>third-party services</h2>
+      <h3>governed by their own terms.</h3>
+      <p>The Service interoperates with third-party services (Apple, Google, Expo, RevenueCat, Railway, and others). Your use of those services is governed by their respective terms and privacy policies. Rally is not responsible for third-party services.</p>
+
+      <h2 id="privacy"><span class="n">12</span>privacy</h2>
+      <h3>see our privacy policy.</h3>
+      <p>Our processing of personal information is described in our <b>Privacy Policy</b>, which is incorporated into these Terms by reference: <a class="inline" href="privacy.html">https://rally.app/privacy</a>.</p>
+
+      <h2 id="ip"><span class="n">13</span>intellectual property; feedback</h2>
+      <h3>our brand, our code.</h3>
+      <p>13.1 The Service, including its software, design, branding, trademarks, and content (excluding User Content), is owned by Rally and protected by U.S. copyright, trademark, and other laws.</p>
+      <p>13.2 You may not use the Rally name, logos, or branding without our prior written permission.</p>
+      <p>13.3 If you submit feedback, suggestions, or ideas, you grant Rally a perpetual, irrevocable, worldwide, royalty-free, fully sublicensable license to use them for any purpose without obligation to you.</p>
+
+      <h2 id="dmca"><span class="n">14</span>dmca notice and takedown</h2>
+      <h3>copyright infringement notices.</h3>
+      <p>14.1 Rally complies with the U.S. Digital Millennium Copyright Act ("<b>DMCA</b>"), 17 U.S.C. § 512.</p>
+      <p>14.2 <b>Designated Agent.</b> Notices of claimed copyright infringement should be sent to our designated agent registered with the U.S. Copyright Office:</p>
+      <blockquote>
+        <b>DMCA Agent — RAEMAR, LLC</b><br/>
+        <b>4th Ave, Venice, CA 90291</b><br/>
+        Email: <a class="inline" href="contact.html">our contact form</a><br/>
+        (Registered at <a class="inline" href="https://dmca.copyright.gov">https://dmca.copyright.gov</a>)
+      </blockquote>
+      <p>14.3 <b>Notice requirements.</b> A valid DMCA notice must include the elements required by 17 U.S.C. § 512(c)(3), including: identification of the copyrighted work; identification of the allegedly infringing material and its location; your contact information; a statement of good-faith belief that the use is not authorized; a statement under penalty of perjury that the information is accurate and that you are authorized to act; and your physical or electronic signature.</p>
+      <p>14.4 <b>Counter-notification.</b> If your User Content was removed in response to a DMCA notice, you may submit a counter-notification meeting the requirements of 17 U.S.C. § 512(g)(3).</p>
+      <p>14.5 <b>Repeat infringers.</b> We will, in appropriate circumstances, terminate the accounts of users we determine to be repeat infringers.</p>
+
+      <h2 id="apple"><span class="n">15</span>app store terms (apple)</h2>
+      <h3>additional terms if you got the app from the apple app store.</h3>
+      <p>If you obtained the Service from the Apple App Store, the following additional terms apply:</p>
+      <p>15.1 These Terms are between you and Rally only, not with Apple. Rally, not Apple, is solely responsible for the Service.</p>
+      <p>15.2 Apple has no obligation to provide maintenance and support for the Service.</p>
+      <p>15.3 In the event of any failure of the Service to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any) for the Service. To the maximum extent permitted by applicable law, Apple has no other warranty obligation with respect to the Service.</p>
+      <p>15.4 Rally, not Apple, is responsible for addressing claims by you or any third party relating to the Service or your possession or use of the Service, including: (a) product-liability claims; (b) any claim that the Service fails to conform to any applicable legal or regulatory requirement; and (c) claims arising under consumer-protection, privacy, or similar legislation.</p>
+      <p>15.5 In the event of any third-party claim that the Service or your possession or use of the Service infringes that party's intellectual-property rights, Rally, not Apple, is solely responsible for the investigation, defense, settlement, and discharge of any such claim.</p>
+      <p>15.6 You represent and warrant that (a) you are not located in a country subject to a U.S. Government embargo or designated as a "terrorist supporting" country; and (b) you are not on any U.S. Government list of prohibited or restricted parties.</p>
+      <p>15.7 You must comply with applicable third-party terms when using the Service.</p>
+      <p>15.8 Apple and Apple's subsidiaries are third-party beneficiaries of these Terms and, upon your acceptance, will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary.</p>
+
+      <h2 id="disclaim"><span class="n">16</span>disclaimers</h2>
+      <h3>"as is" and "as available".</h3>
+      <p>16.1 <b>"AS IS."</b> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE.</p>
+      <p>16.2 We do not warrant that the Service will be uninterrupted, timely, secure, error-free, or that defects will be corrected.</p>
+      <p>16.3 <b>Real-world activities.</b> The Service is for logging recreational sports activity. We are not responsible for injuries, disputes, or other outcomes arising from real-world athletic activity. Play within your abilities.</p>
+      <p>16.4 <b>Not an athletic rating.</b> Leaderboards, ratings, statistics, and achievements are for entertainment and do not represent official athletic ratings (e.g., USTA, UTR, DUPR).</p>
+      <p>16.5 <b>Statutory rights.</b> Some states do not allow the exclusion of certain warranties. To the extent such exclusions are not permitted, the exclusions in this Section apply only to the maximum extent permitted by law, and your statutory rights remain unaffected.</p>
+
+      <h2 id="liability"><span class="n">17</span>limitation of liability</h2>
+      <h3>liability cap and exclusions.</h3>
+      <p>17.1 <b>Cap.</b> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, RALLY'S AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICE WILL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID TO RALLY FOR RALLY+ IN THE 12 MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY, OR (B) ONE HUNDRED U.S. DOLLARS (US$100).</p>
+      <p>17.2 <b>Exclusions.</b> NOTHING IN THESE TERMS LIMITS OR EXCLUDES LIABILITY FOR: (A) PERSONAL INJURY OR DEATH CAUSED BY OUR NEGLIGENCE; (B) FRAUD OR FRAUDULENT MISREPRESENTATION; (C) GROSS NEGLIGENCE OR WILLFUL MISCONDUCT; OR (D) ANY OTHER LIABILITY THAT CANNOT BE LIMITED OR EXCLUDED UNDER APPLICABLE LAW (INCLUDING CALIFORNIA CIVIL CODE § 1668 AND APPLICABLE U.S. CONSUMER-PROTECTION STATUTES).</p>
+      <p>17.3 <b>Consequential damages.</b> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, RALLY WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, INCLUDING LOSS OF DATA, LOSS OF PROFITS, OR LOSS OF GOODWILL, ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICE.</p>
+      <p>17.4 <b>Basis of the bargain.</b> The limitations in this Section are essential elements of the basis of the bargain between you and Rally and apply even if a remedy fails of its essential purpose.</p>
+
+      <h2 id="arbitration"><span class="n">18</span>mandatory arbitration; class action waiver</h2>
+      <h3>binding individual arbitration. opt out within 30 days.</h3>
+      <div class="warning" role="alert">
+        <div class="lab">⚠ please read carefully</div>
+        <p>This section requires you and Rally to resolve disputes by <b>binding individual arbitration</b> and limits your ability to pursue claims in court, before a jury, or as a class. Section 18.10 explains how to opt out within 30 days.</p>
+      </div>
+
+      <h4>18.1 Scope</h4>
+      <p>Except for Excluded Disputes (Section 18.2), you and Rally agree that any dispute, claim, or controversy arising out of or relating to these Terms or the Service ("<b>Dispute</b>"), whether based in contract, tort, statute, fraud, misrepresentation, or any other legal theory, will be resolved by <b>binding individual arbitration</b> under this Section.</p>
+
+      <h4>18.2 Excluded Disputes</h4>
+      <p>The following are not subject to arbitration:</p>
+      <p>(a) <b>Small-claims actions</b> brought in a small-claims court of competent jurisdiction, provided the action remains in small-claims court and is brought on an individual (non-class) basis;</p>
+      <p>(b) Actions seeking <b>injunctive or other equitable relief for actual or threatened infringement, misappropriation, or violation of intellectual-property rights</b> by either party;</p>
+      <p>(c) Disputes that cannot be arbitrated as a matter of applicable law.</p>
+
+      <h4>18.3 Informal Resolution</h4>
+      <p>Before initiating arbitration, the party raising the Dispute will send a written <b>Notice of Dispute</b> to the other party (to <a class="inline" href="contact.html">our contact form</a> for Rally; to your email of record for you), describing the nature of the claim and the relief sought. The parties will attempt in good faith to resolve the Dispute informally for <b>60 days</b> before either may commence arbitration. The statute of limitations is tolled during this period.</p>
+
+      <h4>18.4 Arbitration Rules and Forum</h4>
+      <p>(a) Arbitration will be administered by the <b>American Arbitration Association ("AAA")</b> under the <b>AAA Consumer Arbitration Rules</b> (as modified by these Terms) and, where applicable to mass filings, the <b>AAA Mass Arbitration Supplementary Rules</b>. The Rules are available at <a class="inline" href="https://www.adr.org">https://www.adr.org</a>.</p>
+      <p>(b) If AAA is unavailable, the parties will agree on an alternative administrator or, failing agreement, a court of competent jurisdiction will appoint one.</p>
+      <p>(c) The arbitrator will be a retired judge or attorney with experience in consumer-technology matters.</p>
+      <p>(d) The arbitration will be conducted in <b>English</b>, by <b>telephone, video, or written submissions</b> unless the arbitrator determines an in-person hearing is necessary. If an in-person hearing is required, it will take place in the U.S. county where you reside or, by mutual agreement, elsewhere.</p>
+
+      <h4>18.5 Fees</h4>
+      <p>(a) Filing, administrative, and arbitrator fees will be governed by the AAA Consumer Rules.</p>
+      <p>(b) Rally will pay all AAA filing, administrative, and arbitrator fees that the AAA Consumer Rules require Rally to pay. If you are unable to afford the fees you are required to pay, Rally will pay them on your written request.</p>
+      <p>(c) <b>California arbitration-fee compliance.</b> Where required by California Code of Civil Procedure §§ 1281.97–1281.98, Rally will pay required fees within the timeframes specified by those statutes. Failure to do so will be a material breach permitting you to elect to proceed in court.</p>
+      <p>(d) Each party bears its own attorneys' fees, except where the arbitrator awards fees pursuant to a fee-shifting statute or these Terms.</p>
+
+      <h4>18.6 Class Action and Representative Action Waiver</h4>
+      <p>You and Rally agree that each may bring claims against the other only on an <b>individual basis</b> and not as a plaintiff or class member in any class, consolidated, or representative action. The arbitrator may not consolidate more than one person's claims and may not preside over any form of representative or class proceeding.</p>
+      <p>To the extent any "private attorney general" or representative-action claim cannot be waived as a matter of law (including a claim for <b>public injunctive relief</b> under California's <i>McGill v. Citibank</i> doctrine), that claim is severed from arbitration and may proceed in court, with all other claims remaining in arbitration and stayed pending the court action.</p>
+
+      <h4>18.7 Mass Arbitration Procedures</h4>
+      <p>If 25 or more similar arbitration demands are filed by or with the assistance of the same or coordinated counsel within a 60-day period, the AAA Mass Arbitration Supplementary Rules apply. The parties will cooperate in good faith on bellwether procedures to efficiently resolve common issues.</p>
+
+      <h4>18.8 Arbitrator Authority and Award</h4>
+      <p>The arbitrator has exclusive authority to decide all issues of arbitrability, including whether a Dispute is subject to arbitration, <b>except</b> that a court of competent jurisdiction will decide whether Section 18.6 (Class Action Waiver) is enforceable. The arbitrator may award any individual relief or individual remedies that are permitted by applicable law, but the arbitrator may not award relief against, or that affects, anyone other than the named parties.</p>
+
+      <h4>18.9 Federal Arbitration Act</h4>
+      <p>These Terms evidence a transaction in interstate commerce, and the <b>Federal Arbitration Act</b>, 9 U.S.C. § 1 et seq., governs the interpretation and enforcement of this arbitration agreement.</p>
+
+      <h4>18.10 Right to Opt Out</h4>
+      <p>You may opt out of this arbitration agreement by sending written notice to <a class="inline" href="contact.html">our contact form</a> with the subject line <b>"Arbitration Opt-Out"</b> within <b>30 days</b> after first accepting these Terms. The notice must include your full name, the email address associated with your account, and a clear statement that you wish to opt out of arbitration. Opting out will not affect any other provision of these Terms. If you opt out, neither you nor Rally is bound to arbitrate Disputes between you.</p>
+
+      <h4>18.11 Survival; Severability of This Section</h4>
+      <p>This Section 18 survives termination of these Terms or your account. If any portion of this Section (other than the Class Action Waiver) is found unenforceable, the remainder of this Section will be enforced. If the Class Action Waiver is found unenforceable as to any claim, that claim will be severed and proceed in court, with all other claims remaining in arbitration.</p>
+
+      <h2 id="law"><span class="n">19</span>governing law and forum</h2>
+      <h3>california law. san francisco courts.</h3>
+      <p>These Terms are governed by the laws of the <b>State of California</b>, without regard to its conflict-of-law principles, except that the Federal Arbitration Act governs Section 18. The United Nations Convention on Contracts for the International Sale of Goods does not apply.</p>
+      <p>For Excluded Disputes (Section 18.2), or where a court action is otherwise permitted, you and Rally consent to the <b>exclusive jurisdiction of the state and federal courts located in San Francisco County, California</b>, and waive any objection to venue in those courts.</p>
+
+      <h2 id="term"><span class="n">20</span>termination</h2>
+      <h3>by you, by us, and what survives.</h3>
+      <p>20.1 <b>By you.</b> You may delete your account at any time in Settings → Account → Delete Account, or by contacting <a class="inline" href="contact.html">our contact form</a>. Upon deletion, your data is removed as described in the Privacy Policy.</p>
+      <p>20.2 <b>By Rally.</b> We may suspend or terminate your account, with or without notice, if we reasonably believe you have violated these Terms or applicable law, or to address security or operational concerns. We will provide notice where reasonably practicable.</p>
+      <p>20.3 <b>Effect of termination.</b> Sections that by their nature should survive (including Sections 6, 7.3 (license to residual content), 13, 16, 17, 18, 19, 22–26) survive termination.</p>
+      <p>20.4 <b>Refunds on non-fault termination.</b> If we terminate your account other than for your breach, and you purchased Rally+ within the prior 12 months, we will provide a pro-rata refund of the Rally+ purchase price (treating Rally+ as having a useful life of 24 months from purchase) as your sole and exclusive remedy.</p>
+
+      <h2 id="mods"><span class="n">21</span>modifications to these terms</h2>
+      <h3>changes will be announced.</h3>
+      <p>21.1 We may modify these Terms. We will provide notice of <b>material changes</b> at least <b>30 days</b> before they take effect through the App or by email, except where a shorter notice period is required for legal compliance.</p>
+      <p>21.2 If you continue to use the Service after the effective date of a modification, you accept the modified Terms. <b>If you do not agree, your remedy is to delete your account before the effective date.</b></p>
+      <p>21.3 Modifications to Section 18 (Arbitration) will not apply to disputes that arose before the modification's effective date, and you will have a renewed 30-day opt-out window for any material modification to that Section.</p>
+
+      <h2 id="indemn"><span class="n">22</span>indemnification</h2>
+      <h3>you indemnify us against your misuse.</h3>
+      <p>You agree to indemnify, defend, and hold harmless Rally and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising out of or relating to: (a) your User Content; (b) your use of the Service; (c) your breach of these Terms; (d) your violation of any law or third-party right; or (e) your use of the Service from outside the United States. We reserve the right to assume the exclusive defense of any matter for which you are obligated to indemnify us; in that case, you will reasonably cooperate.</p>
+
+      <h2 id="oss"><span class="n">23</span>open source</h2>
+      <h3>open-source notices.</h3>
+      <p>The Service may include open-source software components. Notices and license terms for those components are available at <a class="inline" href="https://rally.app/oss-notices">https://rally.app/oss-notices</a> and within the App's settings.</p>
+
+      <h2 id="export"><span class="n">24</span>export controls and sanctions</h2>
+      <h3>compliance with u.s. export laws.</h3>
+      <p>You will comply with all applicable U.S. export-control and sanctions laws. You represent that you are not (and will not export the Service to) any person or country prohibited under those laws.</p>
+
+      <h2 id="beta"><span class="n">25</span>beta features</h2>
+      <h3>beta is "as is".</h3>
+      <p>We may identify certain features as "beta," "preview," or similar. Beta features are provided as-is, may be unstable, and may be modified or discontinued. Your use of beta features is at your risk and subject to additional terms we may provide.</p>
+
+      <h2 id="general"><span class="n">26</span>general</h2>
+      <h3>standard provisions.</h3>
+      <p>26.1 <b>Entire agreement.</b> These Terms and the Privacy Policy are the entire agreement between you and Rally regarding the Service and supersede prior agreements on the subject.</p>
+      <p>26.2 <b>Severability.</b> If any provision is found unenforceable, the remaining provisions remain in full force, and the unenforceable provision will be modified to the minimum extent necessary to make it enforceable.</p>
+      <p>26.3 <b>No waiver.</b> Our failure to enforce a provision is not a waiver of our right to do so later.</p>
+      <p>26.4 <b>Assignment.</b> You may not assign or transfer these Terms or your account without our prior written consent. We may assign these Terms in connection with a merger, acquisition, financing, reorganization, or sale of all or substantially all of our assets, or to an affiliate. Any unauthorized assignment is void.</p>
+      <p>26.5 <b>Force majeure.</b> We are not liable for failure or delay caused by events beyond our reasonable control, including natural disasters, war, terrorism, civil unrest, government action, labor disputes, internet or utility outages, or third-party service outages.</p>
+      <p>26.6 <b>Notices.</b> We may give notice via the App, by email to your account email, or by posting on <a class="inline" href="https://rally.app">https://rally.app</a>. You may give notice to us at <a class="inline" href="contact.html">our contact form</a> and at the address above.</p>
+      <p>26.7 <b>Independent contractors.</b> Nothing in these Terms creates an agency, partnership, employment, or joint-venture relationship.</p>
+      <p>26.8 <b>Headings.</b> Headings are for convenience only and do not affect interpretation.</p>
+      <p>26.9 <b>Electronic communications and signatures.</b> You consent to receive communications from us electronically. Clicking "I agree," tapping a similar button, or continuing to use the Service after these Terms take effect constitutes your electronic signature and acceptance under the U.S. E-SIGN Act and applicable state electronic-signature laws.</p>
+      <p>26.10 <b>Right to publish honest reviews.</b> Nothing in these Terms restricts your right under California Civil Code § 1670.8 (the Consumer Review Fairness Act analog) or the federal Consumer Review Fairness Act, 15 U.S.C. § 45b, to make truthful statements about the Service.</p>
+      <p>26.11 <b>Reservation of rights.</b> All rights not expressly granted in these Terms are reserved by Rally.</p>
+
+      <h2 id="contact"><span class="n">27</span>contact</h2>
+      <h3>how to reach us.</h3>
+      <div class="callout">
+        <div class="lab">rally · contact</div>
+        <p>For all inquiries — general questions, legal, privacy, DMCA, security, or anything else — please use <a class="inline" style="color:var(--court);" href="contact.html">our contact form</a> and select the appropriate topic.</p>
+        <p><b style="color:var(--bg);">Mailing address:</b><br/>RAEMAR, LLC<br/>4th Ave, Venice, CA 90291</p>
+      </div>
+
+      <hr/>
+      <p style="font-size:13px;color:var(--muted);">© 2026 RAEMAR, LLC. Version 2.0 (U.S.) · Last updated May 4, 2026.</p>
+
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo">rally<span class="dot">.</span></div>
+      <p>tennis &amp; pickleball, built for the group chat. made by people who hate losing, love talking about it.</p>
+    </div>
+    <div class="foot-col">
+      <h5>product</h5>
+      <ul>
+        <li><a href="index.html#features">features</a></li>
+        <li><a href="index.html#clubs">clubs</a></li>
+        <li><a href="index.html">leaderboards</a></li>
+        <li><a href="index.html">changelog</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>legal</h5>
+      <ul>
+        <li><a href="terms.html">terms</a></li>
+        <li><a href="privacy.html">privacy</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <div>© 2026 rally · made on the court</div>
+    <div>ig · tiktok · x</div>
+  </div>
+</footer>
+
+</body>
+</html>

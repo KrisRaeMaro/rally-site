@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="rally — the simple way to track tennis, pickleball, paddle, and ping pong matches with friends. log scores, see your ratings, and keep your club's history in one place."/>
+<meta name="theme-color" content="#f5f1e8"/>
+<meta property="og:title" content="rally — game on."/>
+<meta property="og:description" content="tennis, pickleball, paddle, and ping pong — made simple. log matches, see your rating, share the moment with friends."/>
+<meta property="og:type" content="website"/>
+<title>rally — game on.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#f5f1e8; --bg-alt:#ecead9; --card:#fff;
+    --ink:#1a1f14; --ink2:#4a5340; --muted:#8a8f7a; --line:#dcd9c8;
+    --court:#e4ff4a; --court-ink:#1a1f14;
+    --green:#2d5a3d; --green-ink:#e4ff4a;
+    --pop:#ff5a8c;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--ink);overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:1px;text-transform:uppercase;}
+
+  /* ───── nav ───── */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,241,232,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav-in{max-width:1320px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;gap:28px;}
+  .logo{font-size:24px;font-weight:700;letter-spacing:-1.2px;}
+  .logo .dot{color:var(--pop);}
+  .nav-links{display:flex;gap:24px;margin-left:40px;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--ink2);}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{margin-left:auto;display:flex;gap:10px;align-items:center;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:transform .15s;white-space:nowrap;font-family:inherit;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--ink);}
+  .btn-ink{background:var(--ink);color:var(--bg);}
+  .btn-court{background:var(--court);color:var(--court-ink);}
+  .btn-lg{padding:16px 26px;font-size:16px;}
+
+  /* ───── hero ───── */
+  .hero{max-width:1320px;margin:0 auto;padding:80px 40px 40px;position:relative;}
+  .tag{display:inline-flex;align-items:center;gap:8px;background:var(--court);color:var(--court-ink);padding:6px 12px;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+  .tag .dot{width:6px;height:6px;border-radius:50%;background:var(--pop);animation:blink 1.2s infinite;}
+  @keyframes blink{50%{opacity:.4;}}
+  .h1{font-size:168px;font-weight:700;letter-spacing:-9px;line-height:1;margin:22px 0 0;}
+  .h1 .acc{background:var(--court);color:var(--court-ink);padding:4px 20px 8px;border-radius:24px;display:inline-block;line-height:0.9;margin-top:12px;}
+  .h1 .dot{color:var(--pop);}
+  .sub{font-size:22px;color:var(--ink2);max-width:560px;margin:32px 0 36px;line-height:1.4;}
+  .sub b{color:var(--ink);font-weight:600;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .stats{display:flex;gap:42px;margin-top:56px;padding-top:32px;border-top:1px dashed var(--line);}
+  .stat{display:flex;flex-direction:column;}
+  .stat .n{font-size:44px;font-weight:700;letter-spacing:-2px;line-height:1;}
+  .stat .l{font-size:11px;margin-top:6px;color:var(--muted);}
+
+  /* hero phones */
+  .hero-phones{position:absolute;top:80px;right:40px;width:560px;height:620px;pointer-events:none;}
+  .hp{position:absolute;width:240px;aspect-ratio:9/19.5;border-radius:38px;background:#1a1f14;padding:10px;box-shadow:0 30px 60px -20px rgba(0,0,0,0.35),0 8px 24px rgba(0,0,0,0.12);}
+  .hp::before{content:'';position:absolute;top:16px;left:50%;transform:translateX(-50%);width:80px;height:24px;background:#000;border-radius:14px;z-index:2;}
+  .hp .screen{width:100%;height:100%;border-radius:28px;overflow:hidden;position:relative;}
+  .hp1{top:0;right:220px;transform:rotate(-7deg);z-index:2;}
+  .hp2{top:60px;right:0;transform:rotate(6deg);z-index:1;}
+
+  /* phone screen mockups */
+  .m-home{background:var(--bg);padding:44px 18px 0;height:100%;}
+  .m-home .h{font-size:14px;font-weight:700;letter-spacing:-0.3px;margin-bottom:4px;}
+  .m-home .s{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+  .m-tile{background:var(--court);color:var(--court-ink);border-radius:18px;padding:14px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;}
+  .m-tile .t{font-size:12px;font-weight:700;letter-spacing:-0.3px;line-height:1.1;}
+  .m-tile .big{font-size:28px;font-weight:700;letter-spacing:-1.5px;}
+  .m-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .m-tile.pink{background:var(--pop);color:#fff;}
+  .m-tile.green{background:var(--green);color:var(--green-ink);}
+  .m-tile.ink{background:var(--ink);color:var(--court);}
+
+  .m-cel{background:var(--pop);height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:20px;}
+  .m-cel .w{font-size:84px;font-weight:700;letter-spacing:-4px;line-height:0.9;}
+  .m-cel .s1{font-size:32px;font-weight:700;letter-spacing:-1.5px;margin-top:14px;}
+  .m-cel .t{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-top:16px;opacity:0.8;}
+
+  /* ───── ticker ───── */
+  .ticker{background:var(--ink);color:var(--court);padding:22px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .ticker-track{display:flex;gap:48px;white-space:nowrap;animation:scroll 40s linear infinite;font-size:32px;font-weight:700;letter-spacing:-1.5px;}
+  .ticker-track span{display:flex;align-items:center;gap:48px;}
+  .ticker-track .d{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--pop);}
+  @keyframes scroll{to{transform:translateX(-50%);}}
+
+  /* ───── sections ───── */
+  section{padding:120px 40px;}
+  .container{max-width:1320px;margin:0 auto;}
+  .section-tag{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+  .section-tag .n{color:var(--court-ink);background:var(--court);padding:2px 8px;border-radius:3px;margin-right:10px;}
+  .h2{font-size:84px;font-weight:700;letter-spacing:-4px;line-height:0.95;margin:18px 0 0;max-width:900px;}
+
+  /* how it works */
+  .how{background:var(--bg-alt);}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:64px;}
+  .step{background:var(--card);border-radius:28px;padding:36px 32px;border:1px solid var(--line);}
+  .step .n{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--muted);}
+  .step .t{font-size:32px;font-weight:700;letter-spacing:-1.2px;margin:14px 0 10px;line-height:1.05;}
+  .step .d{font-size:15px;color:var(--ink2);line-height:1.5;}
+  .step .ill{height:140px;margin-top:24px;border-radius:16px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .ill-1{background:var(--court);}
+  .ill-2{background:var(--green);color:var(--green-ink);}
+  .ill-3{background:var(--pop);color:#fff;}
+  .ill-score{font-size:56px;font-weight:700;letter-spacing:-3px;white-space:nowrap;}
+  .ill-score .dash{color:var(--muted);}
+
+  /* features */
+  .features-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:20px;margin-top:64px;}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:32px;position:relative;overflow:hidden;min-height:280px;}
+  .feat .lab{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+  .feat .t{font-size:28px;font-weight:700;letter-spacing:-1.2px;margin:10px 0 8px;line-height:1.05;}
+  .feat .d{font-size:14px;color:var(--ink2);line-height:1.5;max-width:360px;}
+  .f-big{grid-column:span 2;grid-row:span 2;background:var(--ink);color:var(--bg);border-color:var(--ink);min-height:580px;padding:40px;display:flex;flex-direction:column;justify-content:space-between;}
+  .f-big .t{font-size:64px;letter-spacing:-3px;}
+  .f-big .d{color:#b4b8a8;font-size:16px;max-width:420px;}
+  .f-big .lab{color:var(--court);}
+  .f-court{background:var(--court);border-color:var(--court);}
+  .f-pink{background:var(--pop);color:#fff;border-color:var(--pop);}
+  .f-pink .lab{color:rgba(255,255,255,0.7);}
+  .f-pink .d{color:rgba(255,255,255,0.85);}
+  .f-green{background:var(--green);color:var(--green-ink);border-color:var(--green);}
+  .f-green .lab{color:rgba(228,255,74,0.6);}
+  .f-green .d{color:rgba(228,255,74,0.8);}
+
+  .leaderboard-mini{margin-top:24px;display:flex;flex-direction:column;gap:8px;}
+  .lb-row{display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,0.08);border-radius:12px;font-size:14px;}
+  .lb-row .pos{font-family:'JetBrains Mono',monospace;font-size:11px;width:20px;color:rgba(255,255,255,0.5);}
+  .lb-row .name{flex:1;font-weight:600;}
+  .lb-row .w{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--court);}
+  .lb-row.you{background:var(--court);color:var(--court-ink);}
+  .lb-row.you .pos,.lb-row.you .w{color:var(--court-ink);}
+
+  /* feed */
+  .feed{background:var(--ink);color:var(--bg);}
+  .feed .h2{color:var(--bg);}
+  .feed .section-tag{color:rgba(228,255,74,0.6);}
+  .feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px;}
+  .f-card{background:#1f2218;border:1px solid #2a2e20;border-radius:24px;padding:24px;}
+  .f-card .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+  .f-card .who{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
+  .f-card .when{font-family:'JetBrains Mono',monospace;font-size:10px;color:#6a6d5e;}
+  .f-card .sc{font-size:56px;font-weight:700;letter-spacing:-2.5px;line-height:1;color:var(--court);margin:8px 0;}
+  .f-card .sc .dash{color:#3a3e30;}
+  .f-card .sc .lo{color:#6a6d5e;}
+  .f-card .tag-row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#2a2e20;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
+  .pill.court{background:var(--court);color:var(--court-ink);}
+  .pill.pink{background:var(--pop);color:#fff;}
+
+  /* testimonials */
+  .quotes{background:var(--court);}
+  .quotes .h2{max-width:1100px;}
+  .q-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;}
+  .quote{background:var(--bg);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px;}
+  .quote blockquote{margin:0;font-size:20px;font-weight:500;letter-spacing:-0.5px;line-height:1.35;}
+  .quote .who{display:flex;align-items:center;gap:12px;margin-top:auto;}
+  .quote .av{width:36px;height:36px;border-radius:50%;background:var(--green);color:var(--green-ink);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
+  .quote .nm{font-size:14px;font-weight:600;}
+  .quote .hd{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+
+  /* club */
+  .club{background:var(--bg-alt);}
+  .club-card{background:var(--ink);color:var(--bg);border-radius:36px;padding:64px;margin-top:64px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;}
+  .club-card .lab{color:var(--court);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;}
+  .club-card .t{font-size:60px;font-weight:700;letter-spacing:-2.5px;line-height:1;margin:14px 0 20px;}
+  .club-card .d{font-size:17px;color:#b4b8a8;line-height:1.5;max-width:460px;margin-bottom:32px;}
+  .ch-list{display:flex;flex-direction:column;gap:12px;}
+  .ch{display:flex;align-items:center;gap:12px;font-size:15px;}
+  .ch .dot{width:18px;height:18px;border-radius:50%;background:var(--court);color:var(--court-ink);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
+  .club-code{display:flex;align-items:center;justify-content:center;}
+  .club-code-text{font-size:220px;font-weight:700;letter-spacing:-12px;line-height:0.9;color:var(--court);}
+  .club-code-text .dot{color:var(--pop);}
+
+  /* cta */
+  .cta{background:var(--pop);color:#fff;}
+  .cta .h2{color:#fff;}
+  .cta-big{text-align:center;}
+  .cta-big .h2{font-size:140px;letter-spacing:-7px;margin:24px 0 32px;}
+  .cta-big .section-tag{color:rgba(255,255,255,0.7);}
+  .cta-big .section-tag .n{background:#fff;color:var(--pop);}
+  .cta-note{margin-top:24px;font-size:12px;opacity:0.7;}
+
+  /* footer */
+  footer{background:var(--ink);color:var(--bg);padding:80px 40px 40px;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1320px;margin:0 auto;}
+  .foot-brand .logo{font-size:42px;letter-spacing:-2px;color:var(--bg);}
+  .foot-brand .logo .dot{color:var(--pop);}
+  .foot-brand p{color:#8a8f7a;font-size:14px;max-width:280px;margin-top:12px;line-height:1.5;}
+  .foot-col h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--court);text-transform:uppercase;margin:0 0 16px;}
+  .foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .foot-col a{font-size:14px;color:#b4b8a8;}
+  .foot-col a:hover{color:var(--bg);}
+  .foot-bot{max-width:1320px;margin:64px auto 0;padding-top:24px;border-top:1px solid #2a2e20;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6a6d5e;letter-spacing:1px;text-transform:uppercase;}
+
+  @media (max-width: 1180px){
+    .features-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;}
+    .f-big{grid-column:span 2;grid-row:span 1;min-height:auto;}
+    .f-big .t{font-size:48px;letter-spacing:-2px;}
+  }
+
+  @media (max-width: 960px){
+    .h1{font-size:84px;letter-spacing:-4px;}
+    .hero-phones{display:none;}
+    .steps,.features-grid,.feed-grid,.q-grid{grid-template-columns:1fr;}
+    .f-big{grid-column:span 1;min-height:auto;}
+    .club-card{grid-template-columns:1fr;padding:36px;}
+    .club-code-text{font-size:120px;letter-spacing:-6px;}
+    .cta-big .h2{font-size:64px;letter-spacing:-3px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    section{padding:72px 24px;}
+    .hero{padding:40px 24px;}
+    .h2{font-size:44px;letter-spacing:-2px;}
+    .nav-links{display:none;}
+    .nav-in{padding:16px 24px;}
+    .stats{flex-wrap:wrap;gap:24px;}
+    .stat .n{font-size:32px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{animation:none;}
+    .tag .dot{animation:none;}
+    .btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#" aria-label="rally home">rally<span class="dot">.</span></a>
+    <nav class="nav-links" aria-label="main">
+      <a href="#how">how it works</a>
+      <a href="#features">features</a>
+      <a href="#clubs">clubs</a>
+      <a href="#feed">the feed</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ink" href="#get">get rally ↗</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <span class="tag"><span class="dot"></span>now in public beta · v0.9</span>
+  <h1 class="h1">game<br/><span class="acc">on<span class="dot">.</span></span></h1>
+  <p class="sub">rally is the simplest way to <b>track tennis, pickleball, paddle, and ping pong matches</b> with friends. log scores in a few taps, watch your rating change, and keep every match in one place.</p>
+  <div class="cta-row">
+    <a class="btn btn-ink btn-lg" href="#get">download for iOS</a>
+    <a class="btn btn-court btn-lg" href="#get">get android ↗</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">42k+</div><div class="l mono">matches logged</div></div>
+    <div class="stat"><div class="n">180</div><div class="l mono">active clubs</div></div>
+    <div class="stat"><div class="n">4.9 ★</div><div class="l mono">app store avg</div></div>
+    <div class="stat"><div class="n">0</div><div class="l mono">ads, ever</div></div>
+  </div>
+
+  <div class="hero-phones" aria-hidden="true">
+    <div class="hp hp1"><div class="screen">
+      <div class="m-home">
+        <div class="h">hey, rae 👋</div>
+        <div class="s">ready to play?</div>
+        <div class="m-grid">
+          <div class="m-tile"><div class="t">log a<br/>match</div><div class="big">+</div></div>
+          <div class="m-tile pink"><div class="t">leaderboard</div><div class="big">#3</div></div>
+          <div class="m-tile green"><div class="t">my club</div><div class="big">RZBG</div></div>
+          <div class="m-tile ink"><div class="t">challenge</div><div class="big">⚡</div></div>
+        </div>
+      </div>
+    </div></div>
+    <div class="hp hp2"><div class="screen">
+      <div class="m-cel">
+        <div class="w">W.</div>
+        <div class="s1">6–2, 6–3</div>
+        <div class="t">— nice match, rae —</div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>rae beat mika 6-2 6-3 <span class="d"></span> jay's on a 7-match streak <span class="d"></span> flor joined rosenberg racquet <span class="d"></span> doubles night · tues 7pm <span class="d"></span> pickleball ladder resets sunday <span class="d"></span> new personal best · 3-set comeback <span class="d"></span></span>
+    <span>rae beat mika 6-2 6-3 <span class="d"></span> jay's on a 7-match streak <span class="d"></span> flor joined rosenberg racquet <span class="d"></span> doubles night · tues 7pm <span class="d"></span> pickleball ladder resets sunday <span class="d"></span> new personal best · 3-set comeback <span class="d"></span></span>
+  </div>
+</div>
+
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-tag"><span class="n">01</span>how it works</div>
+    <h2 class="h2">three taps<br/>and you're on the board.</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">step 01</div>
+        <div class="t">play your match.</div>
+        <div class="d">however, whenever, with whoever. rally meets you on the court.</div>
+        <div class="ill ill-1"><div class="ill-score"><span>●</span></div></div>
+      </div>
+      <div class="step">
+        <div class="n">step 02</div>
+        <div class="t">log the score.</div>
+        <div class="d">three taps to add who played and the final score. done before you've packed up.</div>
+        <div class="ill ill-2"><div class="ill-score">6<span class="dash">–</span>3</div></div>
+      </div>
+      <div class="step">
+        <div class="n">step 03</div>
+        <div class="t">see your progress.</div>
+        <div class="d">your rating updates, your streak builds, your match history grows.</div>
+        <div class="ill ill-3"><div class="ill-score">W<span style="color:#fff">.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-tag"><span class="n">02</span>what's inside</div>
+    <h2 class="h2">a full scoreboard<br/>in your pocket.</h2>
+
+    <div class="features-grid">
+      <div class="feat f-big">
+        <div>
+          <div class="lab">the leaderboard</div>
+          <div class="t">always know where you stand.</div>
+          <div class="d">elo-based ratings that update the moment you log a match. see how you stack up in your club, your city, and beyond.</div>
+        </div>
+        <div class="leaderboard-mini">
+          <div class="lb-row"><span class="pos">01</span><span class="name">@mika</span><span class="w">42W · 12L</span></div>
+          <div class="lb-row"><span class="pos">02</span><span class="name">@jay</span><span class="w">38W · 15L</span></div>
+          <div class="lb-row you"><span class="pos">03</span><span class="name">@rae (you)</span><span class="w">34W · 11L ↑2</span></div>
+          <div class="lb-row"><span class="pos">04</span><span class="name">@flor</span><span class="w">31W · 18L</span></div>
+          <div class="lb-row"><span class="pos">05</span><span class="name">@zee</span><span class="w">29W · 14L</span></div>
+        </div>
+      </div>
+
+      <div class="feat f-court">
+        <div class="lab">four sports</div>
+        <div class="t">all four. one app.</div>
+        <div class="d">tennis, pickleball, paddle, and ping pong. each with its own rating, ready when you are.</div>
+      </div>
+
+      <div class="feat f-pink">
+        <div class="lab">messaging</div>
+        <div class="t">chat with your club.</div>
+        <div class="d">share match recaps, plan the next game, celebrate the wins — all in one place.</div>
+      </div>
+
+      <div class="feat f-green">
+        <div class="lab">clubs</div>
+        <div class="t">play with your people.</div>
+        <div class="d">create a private group for you and your friends. invite-only, always.</div>
+      </div>
+
+      <div class="feat">
+        <div class="lab">stats</div>
+        <div class="t">as deep as you like.</div>
+        <div class="d">first-serve %, tiebreak record, head-to-head splits. dig in or keep it simple.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feed" id="feed">
+  <div class="container">
+    <div class="section-tag"><span class="n">03</span>the feed</div>
+    <h2 class="h2">see what's<br/>happening.</h2>
+
+    <div class="feed-grid">
+      <div class="f-card">
+        <div class="meta"><span class="who">@rae vs @mika</span><span class="when">2m ago</span></div>
+        <div class="sc">6<span class="dash">–</span><span class="lo">2</span> 6<span class="dash">–</span><span class="lo">3</span></div>
+        <div class="tag-row"><span class="pill court">W</span><span class="pill">tennis</span><span class="pill">singles</span></div>
+      </div>
+      <div class="f-card">
+        <div class="meta"><span class="who">@jay · streak</span><span class="when">12m ago</span></div>
+        <div class="sc">W<span class="lo">7</span></div>
+        <div class="tag-row"><span class="pill pink">7-match streak</span><span class="pill">pickleball</span></div>
+      </div>
+      <div class="f-card">
+        <div class="meta"><span class="who">@flor vs @zee</span><span class="when">1h ago</span></div>
+        <div class="sc">7<span class="dash">–</span><span class="lo">5</span> 6<span class="dash">–</span><span class="lo">4</span></div>
+        <div class="tag-row"><span class="pill court">W</span><span class="pill">tennis</span><span class="pill">comeback</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="container">
+    <div class="section-tag"><span class="n">04</span>what people say</div>
+    <h2 class="h2">the weekly hit<br/>finally has a home.</h2>
+    <div class="q-grid">
+      <div class="quote">
+        <blockquote>"we used to lose track of who won what. now it's all just there — clean, easy, in one place."</blockquote>
+        <div class="who"><div class="av">M</div><div><div class="nm">mika c.</div><div class="hd">rosenberg racquet · #1</div></div></div>
+      </div>
+      <div class="quote">
+        <blockquote>"i actually look forward to logging the score now. takes two seconds and it makes every match feel a little more real."</blockquote>
+        <div class="who"><div class="av">J</div><div><div class="nm">jay p.</div><div class="hd">club night · host</div></div></div>
+      </div>
+      <div class="quote">
+        <blockquote>"finally a tennis app that feels modern. simple to use, looks great, and my whole group is on it."</blockquote>
+        <div class="who"><div class="av">F</div><div><div class="nm">flor r.</div><div class="hd">pickleball league · 3.5</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="club" id="clubs">
+  <div class="container">
+    <div class="section-tag"><span class="n">05</span>start a club</div>
+    <h2 class="h2">your ladder,<br/>your rules, your friends.</h2>
+
+    <div class="club-card">
+      <div>
+        <div class="lab">clubs</div>
+        <div class="t">create a private leaderboard in 30 seconds.</div>
+        <div class="d">name your club, pick the sports, and send an invite code to your friends. private to your group. unlimited members. unlimited matches.</div>
+        <div class="ch-list">
+          <div class="ch"><span class="dot">✓</span> private · invite-only join codes</div>
+          <div class="ch"><span class="dot">✓</span> unlimited members &amp; matches</div>
+          <div class="ch"><span class="dot">✓</span> club-only leaderboard &amp; feed</div>
+          <div class="ch"><span class="dot">✓</span> doubles, ladders, tournaments — built in</div>
+        </div>
+        <a class="btn btn-court btn-lg" href="#get" style="margin-top:28px;">start a club →</a>
+      </div>
+
+      <div class="club-code">
+        <div class="club-code-text">RZBG<br/><span class="dot">42.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta cta-big" id="get">
+  <div class="container">
+    <div class="section-tag"><span class="n">06</span>get rally</div>
+    <h2 class="h2">let's<br/>play.</h2>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-ink btn-lg" href="#">app store</a>
+      <a class="btn btn-court btn-lg" href="#">google play ↗</a>
+    </div>
+    <div class="mono cta-note">free · ios + android · made for people who love the game</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo">rally<span class="dot">.</span></div>
+      <p>tennis, pickleball, paddle &amp; ping pong — made simple. built by people who love the game and the friends they play with.</p>
+    </div>
+    <div class="foot-col">
+      <h5>product</h5>
+      <ul>
+        <li><a href="#features">features</a></li>
+        <li><a href="#clubs">clubs</a></li>
+        <li><a href="#">leaderboards</a></li>
+        <li><a href="#">changelog</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>legal</h5>
+      <ul>
+        <li><a href="terms.html">terms</a></li>
+        <li><a href="privacy.html">privacy</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <div>© 2026 rally · made on the court</div>
+    <div>ig · tiktok · x</div>
+  </div>
+</footer>
+
+</body>
+</html>

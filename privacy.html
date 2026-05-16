@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="rally — privacy policy. what we collect. what we don't. what we'd never."/>
+<meta name="theme-color" content="#f5f1e8"/>
+<meta property="og:title" content="rally — privacy policy."/>
+<meta property="og:description" content="what we collect, what we don't, what we'd never."/>
+<meta property="og:type" content="website"/>
+<title>rally — privacy policy.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#f5f1e8; --bg-alt:#ecead9; --card:#fff;
+    --ink:#1a1f14; --ink2:#4a5340; --muted:#8a8f7a; --line:#dcd9c8;
+    --court:#e4ff4a; --court-ink:#1a1f14;
+    --green:#2d5a3d; --green-ink:#e4ff4a;
+    --pop:#ff5a8c;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--ink);overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:1px;text-transform:uppercase;}
+
+  /* ───── nav ───── */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,241,232,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav-in{max-width:1320px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;gap:28px;}
+  .logo{font-size:24px;font-weight:700;letter-spacing:-1.2px;}
+  .logo .dot{color:var(--pop);}
+  .nav-links{display:flex;gap:24px;margin-left:40px;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--ink2);}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{margin-left:auto;display:flex;gap:10px;align-items:center;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:transform .15s;white-space:nowrap;font-family:inherit;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--ink);}
+  .btn-ink{background:var(--ink);color:var(--bg);}
+  .btn-court{background:var(--court);color:var(--court-ink);}
+  .btn-lg{padding:16px 26px;font-size:16px;}
+
+  /* ───── header ───── */
+  .legal-hero{max-width:1320px;margin:0 auto;padding:80px 40px 40px;}
+  .tag{display:inline-flex;align-items:center;gap:8px;background:var(--court);color:var(--court-ink);padding:6px 12px;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+  .tag .dot{width:6px;height:6px;border-radius:50%;background:var(--pop);}
+  .legal-hero h1{font-size:120px;font-weight:700;letter-spacing:-6px;line-height:0.9;margin:22px 0 0;}
+  .legal-hero h1 .acc{background:var(--court);color:var(--court-ink);padding:0 16px;border-radius:18px;display:inline-block;}
+  .legal-hero h1 .dot{color:var(--pop);}
+  .legal-hero .updated{margin-top:32px;padding-top:24px;border-top:1px dashed var(--line);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+  .legal-hero .updated b{color:var(--ink);}
+  .legal-hero .lede{font-size:20px;color:var(--ink2);max-width:640px;margin:24px 0 0;line-height:1.45;}
+
+  /* tldr cards */
+  .tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+  .tldr .card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;}
+  .tldr .card.dark{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+  .tldr .card.court{background:var(--court);color:var(--court-ink);border-color:var(--court);}
+  .tldr .lab{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+  .tldr .card.dark .lab{color:var(--court);}
+  .tldr .card.court .lab{color:rgba(26,31,20,0.6);}
+  .tldr .t{font-size:24px;font-weight:700;letter-spacing:-1px;margin:8px 0 8px;line-height:1.1;}
+  .tldr .d{font-size:14px;line-height:1.5;color:var(--ink2);}
+  .tldr .card.dark .d{color:#b4b8a8;}
+  .tldr .card.court .d{color:rgba(26,31,20,0.75);}
+
+  /* ───── content ───── */
+  .legal{padding:60px 40px 120px;}
+  .legal-wrap{max-width:780px;margin:0 auto;}
+  .toc{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 32px;margin-bottom:48px;}
+  .toc h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:0 0 14px;}
+  .toc ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;counter-reset:toc;}
+  .toc li{counter-increment:toc;font-size:14px;}
+  .toc li::before{content:counter(toc,decimal-leading-zero) " ";font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-right:8px;}
+  .toc a{color:var(--ink2);font-weight:500;}
+  .toc a:hover{color:var(--ink);}
+
+  .legal h2{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:56px 0 8px;font-weight:700;}
+  .legal h2 .n{color:var(--court-ink);background:var(--court);padding:2px 8px;border-radius:3px;margin-right:10px;}
+  .legal h3{font-size:36px;font-weight:700;letter-spacing:-1.5px;line-height:1.1;margin:0 0 18px;}
+  .legal h4{font-size:18px;font-weight:700;letter-spacing:-0.4px;line-height:1.3;margin:28px 0 10px;color:var(--ink);}
+  .legal p{font-size:16px;line-height:1.6;color:var(--ink2);margin:0 0 14px;}
+  .legal p b{color:var(--ink);font-weight:600;}
+  .legal ul{padding-left:20px;margin:0 0 14px;}
+  .legal li{font-size:16px;line-height:1.6;color:var(--ink2);margin-bottom:6px;}
+  .legal a.inline{color:var(--ink);font-weight:600;border-bottom:1px solid var(--court);}
+  .legal a.inline:hover{background:var(--court);}
+  .legal hr{border:none;border-top:1px dashed var(--line);margin:48px 0;}
+
+  /* data table */
+  .data-table{width:100%;border-collapse:collapse;margin:16px 0 24px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+  .data-table th,.data-table td{text-align:left;padding:14px 18px;font-size:14px;border-bottom:1px solid var(--line);}
+  .data-table th{background:var(--bg-alt);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700;}
+  .data-table tr:last-child td{border-bottom:none;}
+  .data-table td:first-child{font-weight:600;color:var(--ink);width:32%;}
+  .data-table td{color:var(--ink2);line-height:1.5;}
+
+  .callout{background:var(--ink);color:var(--bg);border-radius:20px;padding:24px 28px;margin:24px 0;}
+  .callout .lab{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--court);margin-bottom:8px;}
+  .callout p{color:#b4b8a8;margin:0;}
+
+  /* ───── footer ───── */
+  footer{background:var(--ink);color:var(--bg);padding:80px 40px 40px;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1320px;margin:0 auto;}
+  .foot-brand .logo{font-size:42px;letter-spacing:-2px;color:var(--bg);}
+  .foot-brand .logo .dot{color:var(--pop);}
+  .foot-brand p{color:#8a8f7a;font-size:14px;max-width:280px;margin-top:12px;line-height:1.5;}
+  .foot-col h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--court);text-transform:uppercase;margin:0 0 16px;}
+  .foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .foot-col a{font-size:14px;color:#b4b8a8;}
+  .foot-col a:hover{color:var(--bg);}
+  .foot-bot{max-width:1320px;margin:64px auto 0;padding-top:24px;border-top:1px solid #2a2e20;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6a6d5e;letter-spacing:1px;text-transform:uppercase;}
+
+  @media (max-width: 960px){
+    .legal-hero{padding:40px 24px;}
+    .legal-hero h1{font-size:64px;letter-spacing:-3px;}
+    .legal{padding:32px 24px 72px;}
+    .legal h3{font-size:26px;letter-spacing:-1px;}
+    .toc ol{grid-template-columns:1fr;}
+    .tldr{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .nav-in{padding:16px 24px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .data-table th,.data-table td{padding:10px 12px;font-size:13px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="rally home">rally<span class="dot">.</span></a>
+    <nav class="nav-links" aria-label="main">
+      <a href="index.html#how">how it works</a>
+      <a href="index.html#features">features</a>
+      <a href="index.html#clubs">clubs</a>
+      <a href="index.html#feed">the feed</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="index.html">← back home</a>
+      <a class="btn btn-ink" href="index.html#get">get rally ↗</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="legal-hero">
+  <span class="tag"><span class="dot"></span>your data · v2.0 (u.s.)</span>
+  <h1>privacy<br/><span class="acc">policy<span class="dot">.</span></span></h1>
+  <p class="lede">how rally collects, uses, and discloses information when you use the rally mobile app and related services. the service is offered solely to u.s. residents.</p>
+  <div class="updated">last updated · <b>may 4, 2026</b> · effective <b>may 4, 2026</b> · version <b>2.0 (u.s.)</b></div>
+
+  <div class="tldr" aria-label="tl;dr">
+    <div class="card court">
+      <div class="lab">tl;dr · 01</div>
+      <div class="t">we don't sell your data.</div>
+      <div class="d">not to advertisers, not to data brokers, not to your ex's new boyfriend. ever.</div>
+    </div>
+    <div class="card dark">
+      <div class="lab">tl;dr · 02</div>
+      <div class="t">we collect what we need.</div>
+      <div class="d">your handle, your matches, your clubs. enough to run rally — nothing more.</div>
+    </div>
+    <div class="card">
+      <div class="lab">tl;dr · 03</div>
+      <div class="t">you can delete it all.</div>
+      <div class="d">delete account in app settings or email us. gone in 30 days.</div>
+    </div>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="legal-wrap">
+
+    <nav class="toc" aria-label="sections">
+      <h5>on this page</h5>
+      <ol>
+        <li><a href="#collect">information we collect</a></li>
+        <li><a href="#use">how we use information</a></li>
+        <li><a href="#disclose">how we disclose information</a></li>
+        <li><a href="#retain">retention</a></li>
+        <li><a href="#secure">security</a></li>
+        <li><a href="#choices">your choices</a></li>
+        <li><a href="#third">third-party services</a></li>
+        <li><a href="#state">u.s. state privacy rights</a></li>
+        <li><a href="#dns">do not sell or share</a></li>
+        <li><a href="#appeals">appeals</a></li>
+        <li><a href="#notice">notice at collection</a></li>
+        <li><a href="#us">united states only</a></li>
+        <li><a href="#changes">changes to this policy</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ol>
+    </nav>
+
+    <article>
+
+      <p>This Privacy Policy describes how <b>RAEMAR, LLC</b>, a <b>California limited liability company</b> with a registered address at <b>4th Ave, Venice, CA 90291</b> ("Rally," "we," "our," or "us"), collects, uses, and discloses information when you use the Rally mobile application (the "App") and related services (collectively, the "Service").</p>
+      <p><b>The Service is offered solely to residents of, and users physically located in, the United States.</b> We do not target, market to, or knowingly accept users from outside the United States. If you are not a U.S. resident or are not physically located in the United States, do not use the Service. See Section 12.</p>
+
+      <h2 id="collect"><span class="n">01</span>information we collect</h2>
+      <h3>what we collect, by category.</h3>
+      <p>We collect the following categories of personal information. Categories are mapped to the statutory categories under the California Consumer Privacy Act, as amended by the California Privacy Rights Act ("CCPA/CPRA"), where applicable.</p>
+
+      <h4>1.1 Information You Provide</h4>
+      <table class="data-table" aria-label="information you provide">
+        <thead>
+          <tr><th>data</th><th>ccpa category</th><th>source</th><th>purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Name (from Apple/Google sign-in, if shared)</td><td>Identifier</td><td>You / Apple / Google</td><td>Account creation, display</td></tr>
+          <tr><td>Email address</td><td>Identifier</td><td>You / Apple / Google</td><td>Account creation, account-related communications</td></tr>
+          <tr><td>Display name, handle</td><td>Identifier</td><td>You</td><td>Profile, leaderboards</td></tr>
+          <tr><td>Profile photo (if associated with your Apple or Google account)</td><td>Identifier; visual information</td><td>Apple / Google</td><td>Profile display</td></tr>
+          <tr><td>Match data (sport, scores, opponents, date/time, notes)</td><td>Internet/electronic activity; user-generated content</td><td>You</td><td>Service functionality</td></tr>
+          <tr><td>Club name, membership, invite codes</td><td>Identifier; user-generated content</td><td>You</td><td>Service functionality</td></tr>
+          <tr><td>Communications with us (e.g., support emails)</td><td>Identifier; user-generated content</td><td>You</td><td>Customer support</td></tr>
+          <tr><td>U.S. residency attestation at signup</td><td>Identifier</td><td>You</td><td>Eligibility verification</td></tr>
+        </tbody>
+      </table>
+      <p>We do <b>not</b> receive or store your Apple ID or Google account password.</p>
+
+      <h4>1.2 Information Collected Automatically</h4>
+      <table class="data-table" aria-label="information collected automatically">
+        <thead>
+          <tr><th>data</th><th>ccpa category</th><th>purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Device type, operating system, app version</td><td>Identifier; internet/electronic activity</td><td>Compatibility, debugging</td></tr>
+          <tr><td>Installation identifier</td><td>Identifier</td><td>Push notification delivery</td></tr>
+          <tr><td>Push notification token (Expo)</td><td>Identifier</td><td>Push notification delivery</td></tr>
+          <tr><td>App usage events (screens visited, features used, match counts)</td><td>Internet/electronic activity</td><td>Product analytics</td></tr>
+          <tr><td>IP address (transient, at request time)</td><td>Identifier; internet/electronic activity</td><td>Security, abuse prevention, U.S. geographic verification</td></tr>
+          <tr><td>Approximate location (court map feature only, while active)</td><td>Geolocation data</td><td>Court map functionality</td></tr>
+        </tbody>
+      </table>
+
+      <h4>1.3 Information We Do Not Collect</h4>
+      <p>We do not collect: precise location (except as described above and only while the court map is active); contacts; call logs; browsing history outside the App; financial or payment information (handled entirely by Apple App Store, Google Play, and RevenueCat); health information; or <b>biometric information</b> as defined under the Illinois Biometric Information Privacy Act, the Texas Capture or Use of Biometric Identifier Act, the Washington biometric law, or any other applicable state biometric law.</p>
+      <p><b>We do not accept user-uploaded files of any kind</b>, including photos, images, audio, video, or attachments. Profile photos are sourced exclusively from your Apple or Google account at sign-in and are not stored as user uploads.</p>
+      <p>We do not use third-party advertising trackers, advertising SDKs, cross-site tracking technologies, or browser cookies for advertising. We do not engage in <b>"cross-context behavioral advertising"</b> as defined under CPRA.</p>
+
+      <h4>1.4 Sensitive Personal Information</h4>
+      <p>We do not collect, use, or disclose <b>sensitive personal information</b> as defined under CCPA/CPRA for purposes that would trigger your right to limit such use.</p>
+
+      <h4>1.5 Children</h4>
+      <p>The Service is not directed to and is not intended for use by children under 13. We do not knowingly collect personal information from children under 13. If we learn we have collected such information, we will delete it. Parents or guardians who believe their child has provided personal information to us should contact <a class="inline" href="contact.html">our contact form</a>.</p>
+
+      <h2 id="use"><span class="n">02</span>how we use information</h2>
+      <h3>we use personal information to:</h3>
+      <ul>
+        <li>Create, maintain, and operate your account.</li>
+        <li>Display your profile, match results, and leaderboard standing within clubs you join.</li>
+        <li>Compute leaderboards, head-to-head records, achievements, and statistics.</li>
+        <li>Send transactional notifications (match results, friend requests, challenges, account notices) by push or email.</li>
+        <li>Send marketing or promotional communications, <b>only if you separately opt in</b>, and which you may disable at any time.</li>
+        <li>Process Rally+ purchases and verify entitlements via RevenueCat.</li>
+        <li>Maintain security, prevent fraud, investigate abuse, and enforce our Terms of Use.</li>
+        <li>Verify that users are located in and are residents of the United States.</li>
+        <li>Improve the Service through aggregated and de-identified analytics.</li>
+        <li>Comply with legal obligations and respond to lawful requests.</li>
+      </ul>
+      <p>We do not engage in <b>automated decision-making producing legal or similarly significant effects</b> about you. Leaderboard rankings, achievement unlocks, and statistics are computed algorithmically but do not produce legal effects.</p>
+
+      <h2 id="disclose"><span class="n">03</span>how we disclose information</h2>
+      <h3>we don't sell. we don't share for ads.</h3>
+      <p><b>Rally does not sell your personal information for monetary consideration, and Rally does not "share" your personal information for cross-context behavioral advertising,</b> as those terms are defined under CCPA/CPRA. We have not done either in the preceding 12 months. We do not have actual knowledge of selling or sharing the personal information of consumers under 16.</p>
+
+      <h4>3.1 To Other Users</h4>
+      <ul>
+        <li><b>Club members.</b> Your display name, handle, profile photo, match results within the club, and leaderboard standing are visible to other members of clubs you have joined.</li>
+        <li><b>Search.</b> Other users who search for you by exact handle can see your display name, handle, and profile photo. They cannot see your match history, statistics, or club memberships unless they share a club with you.</li>
+      </ul>
+
+      <h4>3.2 To Service Providers</h4>
+      <p>We engage the following service providers under written contracts that limit their use of your information to providing services to us:</p>
+      <table class="data-table" aria-label="service providers">
+        <thead>
+          <tr><th>provider</th><th>role</th><th>data processed</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Railway</b></td><td>Application hosting, database</td><td>All user data</td></tr>
+          <tr><td><b>Apple, Inc.</b></td><td>Sign in with Apple, App Store distribution and purchase processing</td><td>Authentication identifier, payment information</td></tr>
+          <tr><td><b>Google LLC</b></td><td>Sign in with Google, Google Play distribution and purchase processing</td><td>Authentication identifier, payment information</td></tr>
+          <tr><td><b>Expo (650 Industries, Inc.)</b></td><td>Push notification delivery</td><td>Push token, device identifier, notification content</td></tr>
+          <tr><td><b>RevenueCat, Inc.</b></td><td>Subscription/entitlement management</td><td>RevenueCat user ID, purchase tokens</td></tr>
+        </tbody>
+      </table>
+      <p>We may engage additional service providers and will update this list.</p>
+
+      <h4>3.3 To Legal and Public Authorities</h4>
+      <p>We may disclose information when we have a good-faith belief that disclosure is necessary to: comply with applicable U.S. federal, state, or local law, court order, subpoena, or regulatory request; enforce our Terms of Use; protect our or others' rights, property, or safety; or detect, prevent, or address fraud, security, or technical issues.</p>
+
+      <h4>3.4 In Connection With a Business Transaction</h4>
+      <p>If we are involved in a merger, acquisition, financing, reorganization, bankruptcy, or sale of assets, your personal information may be transferred as part of that transaction. We will notify you (e.g., by email or in-app notice) of any such transfer that materially changes how your personal information is processed.</p>
+
+      <h4>3.5 With Your Consent or at Your Direction</h4>
+      <p>We may disclose information for purposes you direct or authorize.</p>
+
+      <h2 id="retain"><span class="n">04</span>retention</h2>
+      <h3>how long we keep things.</h3>
+      <table class="data-table" aria-label="retention periods">
+        <thead>
+          <tr><th>category</th><th>retention</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Account profile and credentials</td><td>Until account deletion</td></tr>
+          <tr><td>Match data and club memberships</td><td>Until account deletion</td></tr>
+          <tr><td>Push notification tokens</td><td>Until you disable notifications, uninstall, or 90 days of inactivity, whichever is sooner</td></tr>
+          <tr><td>Authentication tokens (session, refresh)</td><td>Until expiration or revocation; expired tokens purged within 30 days</td></tr>
+          <tr><td>Customer support correspondence</td><td>24 months from last contact</td></tr>
+          <tr><td>Server access logs and security telemetry</td><td>90 days</td></tr>
+          <tr><td>App analytics events (de-identified)</td><td>24 months</td></tr>
+          <tr><td>Aggregated statistics that cannot reasonably be re-identified</td><td>Indefinitely</td></tr>
+        </tbody>
+      </table>
+      <p>When you delete your account (Settings → Account → Delete Account, or by contacting <a class="inline" href="contact.html">our contact form</a>), we permanently delete or de-identify your personal information within <b>30 days</b>, subject to limited exceptions for: backups overwritten on a rolling basis not to exceed 60 days; legal hold or pending claims; and statutory record-keeping obligations.</p>
+      <p>We use <b>"de-identified"</b> in its CCPA/CPRA sense: information that cannot reasonably be linked to a particular consumer or household. We do not attempt to re-identify de-identified information and we contractually prohibit recipients from doing so.</p>
+
+      <h2 id="secure"><span class="n">05</span>security</h2>
+      <h3>safeguards in place.</h3>
+      <p>We implement administrative, technical, and physical safeguards designed to protect personal information, including: TLS encryption in transit; encryption at rest for the production database; OAuth-based authentication via Apple and Google; principle-of-least-privilege access controls for personnel; and logging of access to production data.</p>
+      <p>No system is perfectly secure. If we become aware of a security incident affecting your personal information, we will notify you and, where required, regulators <b>without undue delay</b> and in accordance with applicable law, including U.S. state breach-notification laws (e.g., California Civil Code § 1798.82, the New York SHIELD Act, and analogous statutes in all other states).</p>
+
+      <h2 id="choices"><span class="n">06</span>your choices</h2>
+      <h3>controls available to you.</h3>
+      <ul>
+        <li><b>Push notifications.</b> Disable any time in your device settings or in-app. Marketing notifications can be disabled separately from transactional notifications.</li>
+        <li><b>Profile visibility.</b> Information visible to club members is necessary for the Service; you can leave any club from Settings.</li>
+        <li><b>Court map / location.</b> The court map only requests location while in use. You can deny or revoke this permission at the OS level at any time.</li>
+        <li><b>Account deletion.</b> Settings → Account → Delete Account.</li>
+      </ul>
+
+      <h2 id="third"><span class="n">07</span>third-party services</h2>
+      <h3>governed by their own policies.</h3>
+      <p>The Service integrates with the third-party services identified in Section 3.2. Their processing of your information is governed by their own privacy policies:</p>
+      <ul>
+        <li>Apple: <a class="inline" href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></li>
+        <li>Google: <a class="inline" href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+        <li>Expo: <a class="inline" href="https://expo.dev/privacy">https://expo.dev/privacy</a></li>
+        <li>RevenueCat: <a class="inline" href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></li>
+        <li>Railway: <a class="inline" href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a></li>
+      </ul>
+      <p>We are not responsible for the privacy practices of these third parties.</p>
+
+      <h2 id="state"><span class="n">08</span>u.s. state privacy rights</h2>
+      <h3>rights under state comprehensive privacy laws.</h3>
+      <p>This section describes rights available to U.S. residents under state comprehensive privacy laws, including California (CCPA/CPRA), Virginia (VCDPA), Colorado (CPA), Connecticut (CTDPA), Utah (UCPA), Texas (TDPSA), Oregon, Montana, Iowa, Tennessee, Indiana, Delaware, New Jersey, New Hampshire, Minnesota, Maryland, Rhode Island, Kentucky, and other states with comparable laws (collectively, "<b>State Privacy Laws</b>"). Some rights apply only in certain states. We extend most rights to all U.S. users regardless of residency.</p>
+
+      <h4>8.1 Categories Collected, Sold, Shared, and Disclosed (CCPA/CPRA 12-Month Look-Back)</h4>
+      <p>In the preceding 12 months, we have <b>collected</b> the categories of personal information identified in Section 1. We have <b>disclosed for a business purpose</b> the categories identified in Section 3 (specifically, to the service providers listed in Section 3.2 and as otherwise described in Section 3). We have <b>not sold</b> and have <b>not shared</b> (as defined under CCPA/CPRA) any category of personal information.</p>
+
+      <h4>8.2 Sources of Personal Information</h4>
+      <p>We collect personal information from: (a) you directly; (b) Apple and Google (authentication); (c) other users (e.g., when an opponent logs a match including your handle); and (d) automatic collection from your device.</p>
+
+      <h4>8.3 Business or Commercial Purposes</h4>
+      <p>We process personal information for the purposes set out in Section 2, including: providing and improving the Service; processing transactions; user authentication; preventing fraud and abuse; debugging; verifying U.S. eligibility; and complying with law.</p>
+
+      <h4>8.4 Your Rights</h4>
+      <p>Depending on your state, you may have rights to:</p>
+      <ul>
+        <li><b>Know / Access</b> the categories and specific pieces of personal information we have collected about you, the categories of sources, the purposes for collection, and the categories of recipients.</li>
+        <li><b>Correct</b> inaccurate personal information.</li>
+        <li><b>Delete</b> personal information we have collected from you.</li>
+        <li><b>Portability</b> — receive a copy of your personal information in a portable, machine-readable format. <b>Free of charge.</b></li>
+        <li><b>Opt out of sale or sharing</b> — although we do not sell or share, you may submit a request to confirm.</li>
+        <li><b>Limit use of sensitive personal information</b> — although we do not collect sensitive personal information for purposes that would trigger this right.</li>
+        <li><b>Opt out of profiling</b> in furtherance of decisions producing legal or similarly significant effects (we do not engage in such profiling).</li>
+        <li><b>Non-discrimination.</b> We will not deny service, charge different prices or rates, or provide a different level or quality of service because you exercised a privacy right. <b>All rights, including data export, are provided free of charge.</b></li>
+        <li><b>Appeal</b> a denial of a privacy request — see Section 10.</li>
+      </ul>
+
+      <h4>8.5 How to Submit a Request</h4>
+      <p>You may submit a request through <b>two methods</b>:</p>
+      <ol>
+        <li><b>In-app:</b> Settings → Privacy → Submit Privacy Request.</li>
+        <li><b>Email:</b> <a class="inline" href="contact.html">our contact form</a> with subject "Privacy Request — [State]."</li>
+      </ol>
+      <p>We will verify your identity by matching information you provide to information already in our records. If you submit a request through an authorized agent, the agent must provide written permission signed by you, and we may require you to verify your identity directly with us.</p>
+      <p>We aim to respond within the time required by applicable law (generally <b>45 days</b> under CCPA/CPRA, with one 45-day extension where reasonably necessary; comparable timeframes under other State Privacy Laws).</p>
+
+      <h4>8.6 California "Shine the Light"</h4>
+      <p>California Civil Code § 1798.83 permits California residents to request information regarding our disclosure of personal information to third parties for those parties' direct marketing purposes. <b>We do not disclose personal information to third parties for their direct marketing purposes.</b></p>
+
+      <h4>8.7 California Notice — Complaints (Civil Code § 1789.3)</h4>
+      <p>The provider of the Service is <b>RAEMAR, LLC</b>, contactable at <a class="inline" href="contact.html">our contact form</a> and at the address above. Pursuant to California Civil Code § 1789.3, California residents may report complaints to the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs by mail at 1625 North Market Blvd., Suite N 112, Sacramento, CA 95834, or by telephone at (800) 952-5210.</p>
+
+      <h4>8.8 Global Privacy Control</h4>
+      <p>We honor browser/device-level opt-out preference signals, including the <b>Global Privacy Control ("GPC")</b>, where technically feasible and applicable to mobile contexts.</p>
+
+      <h4>8.9 Nevada</h4>
+      <p>Nevada residents may opt out of the future sale of certain "covered information" under NRS 603A. We do not sell covered information, but to confirm or to register an opt-out preference, contact <a class="inline" href="contact.html">our contact form</a>.</p>
+
+      <h2 id="dns"><span class="n">09</span>do not sell or share my personal information</h2>
+      <h3>no opt-out is required.</h3>
+      <p><b>Rally does not sell your personal information and does not share your personal information for cross-context behavioral advertising.</b> No opt-out is required because we do not engage in either activity. To confirm, you may submit a request as described in Section 8.5.</p>
+
+      <h2 id="appeals"><span class="n">10</span>appeals</h2>
+      <h3>how to appeal a denial.</h3>
+      <p>If we deny your privacy request in whole or in part, you may appeal by replying to our denial or by emailing <a class="inline" href="contact.html">our contact form</a> with the subject line <b>"Privacy Request Appeal."</b> We will respond to appeals within <b>60 days</b> of receipt (or as otherwise required by applicable State Privacy Law). If your appeal is denied, you may contact your state Attorney General or applicable consumer protection authority.</p>
+
+      <h2 id="notice"><span class="n">11</span>notice at collection</h2>
+      <h3>required disclosures.</h3>
+      <p>This Privacy Policy serves as our <b>notice at collection</b> under CCPA/CPRA § 1798.100(a). At or before the point of collection, we collect the categories of personal information identified in Section 1 for the purposes identified in Section 2, and we retain personal information for the periods identified in Section 4. <b>We do not sell or share personal information.</b></p>
+
+      <h2 id="us"><span class="n">12</span>united states only</h2>
+      <h3>u.s. residents only.</h3>
+      <p>The Service is offered only to U.S. residents physically located in the United States. We use IP-based geographic checks and a residency attestation at signup to enforce this restriction. We make no representation that the Service is appropriate or available for use outside the United States, and access from outside the United States is not authorized. Persons outside the United States who access the Service do so on their own initiative and at their own risk and are not the intended audience of the Service.</p>
+
+      <h2 id="changes"><span class="n">13</span>changes to this policy</h2>
+      <h3>we'll notify you of material changes.</h3>
+      <p>We may update this Privacy Policy. If we make <b>material changes</b>, we will notify you through the App or by email at least <b>30 days</b> before the changes take effect, except where a shorter period is required by law. The "Last updated" and "Version" fields above indicate the most recent revision.</p>
+      <p>If you do not agree to a revised Policy, your remedy is to delete your account before the effective date.</p>
+
+      <h2 id="contact"><span class="n">14</span>contact</h2>
+      <h3>privacy questions go here.</h3>
+      <div class="callout">
+        <div class="lab">rally · privacy</div>
+        <p>For privacy questions or to submit a privacy request, please use <a class="inline" style="color:var(--court);" href="contact.html">our contact form</a> and select "privacy" as the topic.</p>
+        <p><b style="color:var(--bg);">Mailing address:</b> RAEMAR, LLC, 4th Ave, Venice, CA 90291</p>
+        <p>For terms questions, see our <a class="inline" style="color:var(--court);" href="terms.html">terms of use</a>.</p>
+      </div>
+
+      <hr/>
+      <p style="font-size:13px;color:var(--muted);">© 2026 RAEMAR, LLC. Version 2.0 (U.S.) · Last updated May 4, 2026.</p>
+
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo">rally<span class="dot">.</span></div>
+      <p>tennis &amp; pickleball, built for the group chat. made by people who hate losing, love talking about it.</p>
+    </div>
+    <div class="foot-col">
+      <h5>product</h5>
+      <ul>
+        <li><a href="index.html#features">features</a></li>
+        <li><a href="index.html#clubs">clubs</a></li>
+        <li><a href="index.html">leaderboards</a></li>
+        <li><a href="index.html">changelog</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>legal</h5>
+      <ul>
+        <li><a href="terms.html">terms</a></li>
+        <li><a href="privacy.html">privacy</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <div>© 2026 rally · made on the court</div>
+    <div>ig · tiktok · x</div>
+  </div>
+</footer>
+
+</body>
+</html>
