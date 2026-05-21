@@ -58,13 +58,13 @@
   .stat .n{font-size:44px;font-weight:700;letter-spacing:-2px;line-height:1;}
   .stat .l{font-size:11px;margin-top:6px;color:var(--muted);}
 
-  /* hero phones */
-  .hero-phones{position:absolute;top:80px;right:40px;width:560px;height:620px;pointer-events:none;}
-  .hp{position:absolute;width:240px;aspect-ratio:9/19.5;border-radius:38px;background:#1a1f14;padding:10px;box-shadow:0 30px 60px -20px rgba(0,0,0,0.35),0 8px 24px rgba(0,0,0,0.12);}
-  .hp::before{content:'';position:absolute;top:16px;left:50%;transform:translateX(-50%);width:80px;height:24px;background:#000;border-radius:14px;z-index:2;}
-  .hp .screen{width:100%;height:100%;border-radius:28px;overflow:hidden;position:relative;}
-  .hp1{top:0;right:220px;transform:rotate(-7deg);z-index:2;}
-  .hp2{top:60px;right:0;transform:rotate(6deg);z-index:1;}
+/* hero phones — uses cropped phone shots (bezel baked in) */
+  .hero-phones{position:absolute;top:80px;right:40px;width:560px;height:640px;pointer-events:none;}
+  .hp{position:absolute;width:260px;aspect-ratio:932/2018;border-radius:46px;overflow:hidden;background:transparent;padding:0;box-shadow:0 40px 80px -20px rgba(0,0,0,0.4),0 12px 32px rgba(0,0,0,0.15);}
+  .hp .screen{width:100%;height:100%;border-radius:46px;overflow:hidden;position:relative;background:transparent;}
+  .hp .screen img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+  .hp1{top:0;right:240px;transform:rotate(-6deg);z-index:2;}
+  .hp2{top:80px;right:0;transform:rotate(5deg);z-index:1;}
 
   /* phone screen mockups */
   .m-home{background:var(--bg);padding:44px 18px 0;height:100%;}
@@ -82,6 +82,7 @@
   .m-cel .w{font-size:84px;font-weight:700;letter-spacing:-4px;line-height:0.9;}
   .m-cel .s1{font-size:32px;font-weight:700;letter-spacing:-1.5px;margin-top:14px;}
   .m-cel .t{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-top:16px;opacity:0.8;}
+
 
   /* ───── ticker ───── */
   .ticker{background:var(--ink);color:var(--court);padding:22px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
