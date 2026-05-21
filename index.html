@@ -66,24 +66,6 @@
   .hp1{top:0;right:240px;transform:rotate(-6deg);z-index:2;}
   .hp2{top:80px;right:0;transform:rotate(5deg);z-index:1;}
 
-  /* phone screen mockups */
-  .m-home{background:var(--bg);padding:44px 18px 0;height:100%;}
-  .m-home .h{font-size:14px;font-weight:700;letter-spacing:-0.3px;margin-bottom:4px;}
-  .m-home .s{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
-  .m-tile{background:var(--court);color:var(--court-ink);border-radius:18px;padding:14px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;}
-  .m-tile .t{font-size:12px;font-weight:700;letter-spacing:-0.3px;line-height:1.1;}
-  .m-tile .big{font-size:28px;font-weight:700;letter-spacing:-1.5px;}
-  .m-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-  .m-tile.pink{background:var(--pop);color:#fff;}
-  .m-tile.green{background:var(--green);color:var(--green-ink);}
-  .m-tile.ink{background:var(--ink);color:var(--court);}
-
-  .m-cel{background:var(--pop);height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:20px;}
-  .m-cel .w{font-size:84px;font-weight:700;letter-spacing:-4px;line-height:0.9;}
-  .m-cel .s1{font-size:32px;font-weight:700;letter-spacing:-1.5px;margin-top:14px;}
-  .m-cel .t{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-top:16px;opacity:0.8;}
-
-
   /* ───── ticker ───── */
   .ticker{background:var(--ink);color:var(--court);padding:22px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .ticker-track{display:flex;gap:48px;white-space:nowrap;animation:scroll 40s linear infinite;font-size:32px;font-weight:700;letter-spacing:-1.5px;}
@@ -266,26 +248,10 @@
     <div class="stat"><div class="n">0</div><div class="l mono">ads, ever</div></div>
   </div>
 
-  <div class="hero-phones" aria-hidden="true">
-    <div class="hp hp1"><div class="screen">
-      <div class="m-home">
-        <div class="h">hey, rae 👋</div>
-        <div class="s">ready to play?</div>
-        <div class="m-grid">
-          <div class="m-tile"><div class="t">log a<br/>match</div><div class="big">+</div></div>
-          <div class="m-tile pink"><div class="t">leaderboard</div><div class="big">#3</div></div>
-          <div class="m-tile green"><div class="t">my club</div><div class="big">RZBG</div></div>
-          <div class="m-tile ink"><div class="t">challenge</div><div class="big">⚡</div></div>
-        </div>
-      </div>
-    </div></div>
-    <div class="hp hp2"><div class="screen">
-      <div class="m-cel">
-        <div class="w">W.</div>
-        <div class="s1">6–2, 6–3</div>
-        <div class="t">— nice match, rae —</div>
-      </div>
-    </div></div>
+  <!-- real app screens -->
+  <div class="hero-phones">
+    <div class="hp hp1"><div class="screen"><img src="assets/home-phone.png" alt="rally home screen — hey rae, w1 streak, log a match"/></div></div>
+    <div class="hp hp2"><div class="screen"><img src="assets/activity-phone.png" alt="rally activity feed — pings, challenges, match results"/></div></div>
   </div>
 </section>
 
